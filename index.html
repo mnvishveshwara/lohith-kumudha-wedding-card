@@ -12,22 +12,22 @@
 <meta property="og:image" content="img/couple.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Pinyon+Script&family=Noto+Serif+Kannada:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Noto+Serif+Kannada:wght@400;600&display=swap" rel="stylesheet">
 <style>
   :root{
     --sage:#8a9a76; --sage-l:#a9b796; --sage-d:#5f6e4f; --sage-dd:#3e4935;
     --ivory:#faf6ee; --cream:#f3ebdd; --sand:#e7dbc6;
-    --ink:#3d3b34; --muted:#7c776b;
+    --ink:#2f2d27; --muted:#5e594e;
     --gold:#c2a46b; --gold-d:#9c7f45;
     --gold-foil:linear-gradient(135deg,#a98a4f 0%,#ecd7a4 30%,#c2a46b 52%,#f4e5bf 72%,#a3864c 100%);
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-  body{font-family:'Cormorant Garamond',serif;color:var(--ink);background:#6f7f5d;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  body{font-family:'Lora',serif;color:var(--ink);background:#6f7f5d;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
   body.locked{overflow:hidden;height:100svh;}
   img{display:block;max-width:100%}
   .app{max-width:480px;margin:0 auto;background:var(--ivory);position:relative;min-height:100svh;overflow:hidden;box-shadow:0 0 90px rgba(0,0,0,.35);}
-  .script{font-family:'Pinyon Script',cursive;font-weight:400;}
+  .script{font-family:'Playfair Display',serif;font-style:italic;font-weight:500;}
   /* languages */
   .kn,.knt{font-family:'Noto Serif Kannada',serif;}
   html[data-lang="en"] .kn{display:none!important}
@@ -54,7 +54,7 @@
     filter:drop-shadow(0 10px 18px rgba(30,40,20,.45));}
   .seal svg{width:100%;height:100%;}
   .seal .mono{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#7a6236;text-align:center;}
-  .seal .mono b{font-family:'Pinyon Script',cursive;font-weight:400;font-size:38px;line-height:1;}
+  .seal .mono b{font-family:'Playfair Display',serif;font-style:italic;font-weight:500;font-size:32px;line-height:1;}
   .seal .mono small{font-size:10px;letter-spacing:.3em;text-transform:uppercase;margin-top:8px;font-weight:600;}
   .seal .mono small.kn{letter-spacing:.05em;font-size:11px;}
   .seal{animation:pulse 2.4s ease-in-out infinite;}
@@ -103,11 +103,11 @@
   .heart-rule::before,.heart-rule::after{content:"";width:46px;height:1px;background:linear-gradient(90deg,transparent,#8d877a);}
   .heart-rule::after{background:linear-gradient(90deg,#8d877a,transparent)}
   .heart-rule span{font-size:14px;line-height:1}
-  .getting{font-style:italic;font-size:19px;color:#5a574e;}
+  .getting{font-style:italic;font-size:18px;color:#4a473f;}
   .getting.kn{font-style:normal;font-size:16px;}
-  .h-name{font-size:clamp(34px,10.4vw,50px);line-height:1.05;color:#3a3832;margin-top:10px;}
+  .h-name{font-size:clamp(30px,9vw,42px);line-height:1.05;color:#3a3832;margin-top:10px;}
   .h-name.kn{font-family:'Noto Serif Kannada',serif;font-size:21px;line-height:1.45;font-weight:600;margin-top:14px;}
-  .h-of{font-size:13.5px;font-style:italic;color:var(--muted);line-height:1.45;margin-top:4px;}
+  .h-of{font-size:14px;color:var(--muted);line-height:1.45;margin-top:4px;}
   .h-of.kn{font-style:normal;font-size:12px;}
   .h-amp{font-size:40px;color:var(--gold-d);line-height:1;margin:10px 0 0;}
   .h-date{margin-top:18px;font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:var(--sage-dd);font-weight:600;}
@@ -125,9 +125,9 @@
   /* ================= SECTIONS ================= */
   .sec{padding:64px 30px;text-align:center;position:relative;}
   .sec + .sec{border-top:1px solid rgba(194,164,107,.22);}
-  .sec-title{font-family:'Pinyon Script',cursive;font-weight:400;font-size:40px;line-height:1.1;color:#3a3832;}
+  .sec-title{font-family:'Playfair Display',serif;font-weight:500;font-size:30px;line-height:1.1;color:#3a3832;}
   .sec-title.kn{font-family:'Noto Serif Kannada',serif;font-size:24px;font-weight:600;}
-  .lead{font-style:italic;font-size:19px;line-height:1.6;color:#4d4a42;max-width:330px;margin:0 auto;}
+  .lead{font-size:17px;line-height:1.75;color:#3a3832;max-width:330px;margin:0 auto;}
   .lead.kn{font-style:normal;font-size:15px;line-height:1.9;}
   .small-note{font-size:14px;color:var(--muted);font-style:italic;margin-top:18px;line-height:1.6;}
   .small-note.kn{font-style:normal;font-size:12.5px;line-height:1.9;}
@@ -144,11 +144,11 @@
   .scratch{position:relative;width:250px;height:230px;margin:26px auto 0;}
   .scratch .under{position:absolute;inset:0;}
   .scratch .under svg{position:absolute;inset:0;width:100%;height:100%;}
-  .scratch .under .txt{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:52px 40px 30px;text-align:center;}
-  .scratch .day{font-size:13px;letter-spacing:.25em;text-transform:uppercase;color:var(--sage-d);font-weight:600;}
-  .scratch .big{font-size:44px;line-height:1;color:#3a3832;margin:4px 0;}
-  .scratch .tm{font-size:15px;font-weight:600;color:var(--ink);}
-  .scratch .lg{font-size:12px;font-style:italic;color:var(--muted);}
+  .scratch .under .txt{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 58px 58px;text-align:center;}
+  .scratch .day{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--sage-d);font-weight:600;}
+  .scratch .big{font-size:30px;line-height:1;color:#3a3832;margin:4px 0;}
+  .scratch .tm{font-size:12.5px;line-height:1.35;font-weight:600;color:var(--ink);}
+  .scratch .lg{font-size:11px;line-height:1.3;font-style:italic;color:var(--muted);}
   .scratch canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:grab;transition:opacity .8s ease;}
   .scratch canvas.gone{opacity:0;pointer-events:none}
   .save-wrap{opacity:0;transform:translateY(10px);transition:all .7s ease;pointer-events:none;}
@@ -197,24 +197,13 @@
   .map{margin-top:22px;border-radius:18px;overflow:hidden;border:1px solid var(--sand);box-shadow:0 14px 30px rgba(60,55,40,.12);line-height:0;}
   .map iframe{width:100%;height:250px;border:0;filter:saturate(.75) sepia(.12);}
 
-  /* families */
-  .bless{font-size:16px;color:var(--muted);font-style:italic;}
-  .bless.kn{font-style:normal;font-size:13px;line-height:1.9;}
-  .bless b{display:block;font-style:normal;font-weight:600;font-size:19px;color:#3a3832;margin-top:4px;}
-  .fam{list-style:none;margin-top:26px;display:flex;flex-direction:column;gap:13px;}
-  .fam li{font-size:15px;color:var(--muted);line-height:1.45;}
-  .fam li.kn{font-size:12.5px;line-height:1.8;}
-  .fam li b{display:block;font-weight:600;font-size:17.5px;color:#3a3832;}
-  .fam li.kn b{font-size:14px;}
-  .fam li + li{padding-top:13px;border-top:1px dashed rgba(194,164,107,.4);}
-
   /* footer */
   .foot{background:linear-gradient(180deg,#6c7c5a,#4b5840);color:#f3ebdd;padding:58px 28px calc(84px + env(safe-area-inset-bottom));text-align:center;position:relative;overflow:hidden;}
   .foot .leafbg{position:absolute;inset:0;opacity:.35;pointer-events:none;}
   .foot > *:not(.leafbg){position:relative}
   .foot .with{font-style:italic;font-size:17px;opacity:.9}
   .foot .with.kn{font-style:normal;font-size:14px}
-  .foot .fn{font-family:'Pinyon Script',cursive;font-size:44px;line-height:1.15;margin-top:6px;color:#fff8e8;}
+  .foot .fn{font-family:'Playfair Display',serif;font-style:italic;font-weight:500;font-size:34px;line-height:1.15;margin-top:6px;color:#fff8e8;}
   .foot .fd{margin-top:12px;font-size:13px;letter-spacing:.3em;text-transform:uppercase;opacity:.85}
   .foot .pill{background:#f3ebdd;color:var(--sage-dd);box-shadow:0 10px 22px rgba(0,0,0,.2);}
   .h-portrait{display:none;width:132px;margin:4px auto 16px;padding:4px;border-radius:70px 70px 12px 12px;background:var(--gold-foil);box-shadow:0 12px 26px rgba(120,95,60,.25);}
@@ -222,8 +211,8 @@
   @media (min-height:780px){
     .hero .blessing{font-size:12px;margin-bottom:22px}
     .getting{font-size:22px}.getting.kn{font-size:18px}
-    .h-name{font-size:clamp(40px,12vw,58px)}.h-name.kn{font-size:clamp(21px,6vw,26px)}
-    .h-of{font-size:15px}.h-of.kn{font-size:13px}
+    .h-name{font-size:clamp(32px,9.6vw,46px)}.h-name.kn{font-size:clamp(21px,6vw,26px)}
+    .h-of{font-size:15.5px}.h-of.kn{font-size:13px}
     .h-amp{font-size:48px;margin:16px 0 4px}
     .h-date{margin-top:26px;font-size:14px}
     .scroll-cue{margin-top:34px}
@@ -290,7 +279,7 @@
     </button>
     <button class="fab lang" id="langBtn" type="button" aria-label="Switch language">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.8 3 2.8 15 0 18M12 3c-2.8 3-2.8 15 0 18"/></svg>
-      <span class="en knt">ಕನ್ನಡ</span><span class="kn" style="font-family:'Cormorant Garamond',serif">English</span>
+      <span class="en knt">ಕನ್ನಡ</span><span class="kn" style="font-family:'Lora',serif">English</span>
     </button>
   </div>
 </div>
@@ -327,13 +316,13 @@
         <p class="getting en">We're getting married</p><p class="getting kn">ಶುಭ ವಿವಾಹ</p></div>
       <div class="h-anim">
         <h1 class="h-name script en">Lohith</h1><h1 class="h-name kn">ಚಿ॥ ರಾ॥ ಲೋಹಿತ್ ಟಿ.ಎಸ್</h1>
-        <p class="h-of en">Son of Smt. Shashikala &amp;<br>Sri Subramanyaswamy</p>
+        <p class="h-of en">Son of Smt. Shashikala &amp; Sri Subramanyaswamy</p>
         <p class="h-of kn">ಶ್ರೀಮತಿ ಶಶಿಕಲ ಮತ್ತು ಶ್ರೀ ಸುಬ್ರಮಣ್ಯಸ್ವಾಮಿ ರವರ ಪುತ್ರ</p>
       </div>
       <div class="h-anim h-amp script">&amp;</div>
       <div class="h-anim">
         <h1 class="h-name script en">Kumuda Priya</h1><h1 class="h-name kn">ಚಿ॥ ಸೌ॥ ಕುಮುದ ಪ್ರಿಯ ಎನ್.ಪಿ</h1>
-        <p class="h-of en">Daughter of Smt. Bhuvaneshwari &amp;<br>Late Sri Prasannakumar</p>
+        <p class="h-of en">Daughter of Smt. Bhuvaneshwari &amp; Late Sri Prasannakumar</p>
         <p class="h-of kn">ಶ್ರೀಮತಿ ಭುವನೇಶ್ವರಿ ಮತ್ತು ಲೇಟ್. ಶ್ರೀ ಪ್ರಸನ್ನಕುಮಾರ್ ರವರ ಪುತ್ರಿ</p>
       </div>
       <div class="h-anim"><p class="h-date en">20 · 11 · 2026</p><p class="h-date kn">ತಾ: 20-11-2026, ಶುಕ್ರವಾರ</p></div>
@@ -402,7 +391,7 @@
         <div class="txt">
           <div class="day en">Friday</div><div class="day kn">ಶುಕ್ರವಾರ</div>
           <div class="big script">20 Nov</div>
-          <div class="tm en">2026 · 9:50 – 10:20 AM</div><div class="tm kn">2026 · ಬೆಳಿಗ್ಗೆ 9-50 ರಿಂದ 10-20</div>
+          <div class="tm en">2026<br>9:50 – 10:20 AM</div><div class="tm kn">2026<br>ಬೆಳಿಗ್ಗೆ 9-50 ರಿಂದ 10-20</div>
           <div class="lg en">Shubha Dhanur Lagna</div><div class="lg kn">ಶುಭ ಧನುರ್ ಲಗ್ನ</div>
         </div>
       </div>
@@ -479,32 +468,6 @@
     </a>
   </section>
 
-  <!-- ============ FAMILIES ============ -->
-  <section class="sec">
-    <p class="bless en reveal">With the blessings of<b>Late Smt. Lalithamma &amp; Late Sri Prabhuswamy</b></p>
-    <p class="bless kn reveal">ಲೇಟ್. ಶ್ರೀಮತಿ ಲಲಿತಮ್ಮ ಮತ್ತು ಲೇಟ್. ಶ್ರೀ ಪ್ರಭುಸ್ವಾಮಿ<br>ಇವರ ಆಶೀರ್ವಾದದೊಂದಿಗೆ</p>
-    <div style="margin-top:40px" class="reveal">
-      <h2 class="sec-title en">Awaiting Your Presence</h2><h2 class="sec-title kn">ತಮ್ಮ ಸುಖಾಗಮನವನ್ನು ಬಯಸುವವರು</h2>
-    </div>
-    <ul class="fam en">
-      <li class="reveal"><b>Smt. Lalithamma &amp; Prabhuswamy</b>children, sons-in-law &amp; grandchildren · Tigalanahalli, C.N. Halli Tq.</li>
-      <li class="reveal"><b>Smt. Shambhulingamma &amp; Basavarajappa</b>children, sons-in-law &amp; grandchildren · Hosahalli, Tiptur Tq.</li>
-      <li class="reveal"><b>Smt. Padma &amp; Shivamurthy</b>children &amp; family · Kommaraghatta, Arasikere Tq.</li>
-      <li class="reveal"><b>Smt. Pushpavathi &amp; Mahalingappa</b>children &amp; family · Chikkamarappanahalli, Tiptur Tq.</li>
-      <li class="reveal"><b>Smt. Arpitha &amp; Kiran Kumar</b>Vijay &amp; Vaishnavi · Kommaraghatta, Arasikere Tq.</li>
-      <li class="reveal"><b>Smt. Kusuma &amp; Vasanth Kumar</b>Lochan &amp; Punarvi · Chikkamarappanahalli, Tiptur Tq.</li>
-      <li class="reveal"><b>The Ooramundala Mane family</b>with relatives &amp; friends</li>
-    </ul>
-    <ul class="fam kn">
-      <li class="kn reveal"><b>ಶ್ರೀಮತಿ ಲಲಿತಮ್ಮ ಮತ್ತು ಪ್ರಭುಸ್ವಾಮಿ</b>ಮಕ್ಕಳು, ಅಳಿಯಂದಿರು ಮತ್ತು ಮೊಮ್ಮಕ್ಕಳು · ತಿಗಳನಹಳ್ಳಿ, ಸಿ.ಎನ್ ಹಳ್ಳಿ (ತಾ)</li>
-      <li class="kn reveal"><b>ಶ್ರೀಮತಿ ಶಂಭುಲಿಂಗಮ್ಮ ಮತ್ತು ಬಸವರಾಜಪ್ಪ</b>ಮಕ್ಕಳು, ಅಳಿಯಂದಿರು ಮತ್ತು ಮೊಮ್ಮಕ್ಕಳು · ಹೊಸಹಳ್ಳಿ, ತಿಪಟೂರು (ತಾ)</li>
-      <li class="kn reveal"><b>ಶ್ರೀಮತಿ ಪದ್ಮ ಮತ್ತು ಶಿವಮೂರ್ತಿ</b>ಮಕ್ಕಳು, ಕುಟುಂಬದವರು · ಕೊಮ್ಮಾರಘಟ್ಟ, ಅರಸೀಕೆರೆ (ತಾ)</li>
-      <li class="kn reveal"><b>ಶ್ರೀಮತಿ ಪುಷ್ಪವತಿ ಮತ್ತು ಮಹಾಲಿಂಗಪ್ಪ</b>ಮಕ್ಕಳು, ಕುಟುಂಬದವರು · ಚಿಕ್ಕಮಾರಪ್ಪನಹಳ್ಳಿ, ತಿಪಟೂರು (ತಾ)</li>
-      <li class="kn reveal"><b>ಶ್ರೀಮತಿ ಅರ್ಪಿತ ಮತ್ತು ಕಿರಣ್ ಕುಮಾರ್</b>ವಿಜಯ್ ಮತ್ತು ವೈಷ್ಣವಿ · ಕೊಮ್ಮಾರಘಟ್ಟ, ಅರಸೀಕೆರೆ (ತಾ)</li>
-      <li class="kn reveal"><b>ಶ್ರೀಮತಿ ಕುಸುಮ ಮತ್ತು ವಸಂತ್ ಕುಮಾರ್</b>ಲೋಚನ್ ಹಾಗೂ ಪುನರ್ವಿ · ಚಿಕ್ಕಮಾರಪ್ಪನಹಳ್ಳಿ, ತಿಪಟೂರು (ತಾ)</li>
-      <li class="kn reveal"><b>ಊರಮುಂದಲ ಮನೆ ವಂಶಸ್ಥರು</b>ಹಾಗೂ ಬಂಧು-ಮಿತ್ರರು</li>
-    </ul>
-  </section>
 
   <!-- ============ FOOTER ============ -->
   <footer class="foot">
