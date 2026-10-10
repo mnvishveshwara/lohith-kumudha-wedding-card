@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#7f8f6c">
+<title>Lohith & Kumuda Priya — Wedding Invitation</title>
+<meta name="description" content="Lohith T.S weds Kumuda Priya N.P · Muhurtham Fri, 20 Nov 2026, 9:50–10:20 AM · Sri Matha Convention Hall, K.B. Cross, Tiptur">
+<meta property="og:title" content="Lohith & Kumuda Priya — Wedding Invitation">
+<meta property="og:description" content="Tap to open your invitation · 20 November 2026 · Tiptur">
+<meta property="og:image" content="img/couple.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Pinyon+Script&family=Noto+Serif+Kannada:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sage:#8a9a76; --sage-l:#a9b796; --sage-d:#5f6e4f; --sage-dd:#3e4935;
+    --ivory:#faf6ee; --cream:#f3ebdd; --sand:#e7dbc6;
+    --ink:#3d3b34; --muted:#7c776b;
+    --gold:#c2a46b; --gold-d:#9c7f45;
+    --gold-foil:linear-gradient(135deg,#a98a4f 0%,#ecd7a4 30%,#c2a46b 52%,#f4e5bf 72%,#a3864c 100%);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{font-family:'Cormorant Garamond',serif;color:var(--ink);background:#6f7f5d;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  body.locked{overflow:hidden;height:100svh;}
+  img{display:block;max-width:100%}
+  .app{max-width:480px;margin:0 auto;background:var(--ivory);position:relative;min-height:100svh;overflow:hidden;box-shadow:0 0 90px rgba(0,0,0,.35);}
+  .script{font-family:'Pinyon Script',cursive;font-weight:400;}
+  /* languages */
+  .kn,.knt{font-family:'Noto Serif Kannada',serif;}
+  html[data-lang="en"] .kn{display:none!important}
+  html[data-lang="kn"] .en{display:none!important}
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity 1s ease,transform 1s cubic-bezier(.2,.7,.2,1);}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ================= GATE (doors) ================= */
+  .gate{position:fixed;inset:0;z-index:100;display:flex;justify-content:center;pointer-events:none;}
+  .gate-inner{position:relative;width:100%;max-width:480px;height:100%;perspective:1400px;pointer-events:auto;cursor:pointer;}
+  .door{position:absolute;top:0;width:50%;height:100%;background:#84936f;overflow:hidden;
+    transition:transform 1.9s cubic-bezier(.65,0,.25,1),opacity .6s ease 1.5s;}
+  .door svg{position:absolute;inset:0;width:100%;height:100%;}
+  .door.l{left:0;transform-origin:left center;box-shadow:inset -10px 0 24px rgba(40,50,30,.35);}
+  .door.r{right:0;transform-origin:right center;box-shadow:inset 10px 0 24px rgba(40,50,30,.35);}
+  .door.l::after,.door.r::after{content:"";position:absolute;top:0;bottom:0;width:7px;background:linear-gradient(90deg,#9c7f45,#f1dfae,#b39556);}
+  .door.l::after{right:0}.door.r::after{left:0}
+  .door .pearls{position:absolute;top:0;bottom:0;width:6px;background:radial-gradient(circle at 50% 50%,#fffaf0 0 1.8px,#d9c9a8 2.4px,transparent 2.9px) 0 0/6px 8px repeat-y;}
+  .door.l .pearls{right:9px}.door.r .pearls{left:9px}
+  .door .vignette{position:absolute;inset:0;background:radial-gradient(120% 70% at 50% 50%,transparent 40%,rgba(40,50,30,.35));}
+  .gate.open .door.l{transform:rotateY(-100deg);opacity:0}
+  .gate.open .door.r{transform:rotateY(100deg);opacity:0}
+  .seal{position:absolute;left:50%;top:50%;width:170px;height:170px;transform:translate(-50%,-50%);z-index:3;transition:transform .7s ease,opacity .6s ease;
+    filter:drop-shadow(0 10px 18px rgba(30,40,20,.45));}
+  .seal svg{width:100%;height:100%;}
+  .seal .mono{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#7a6236;text-align:center;}
+  .seal .mono b{font-family:'Pinyon Script',cursive;font-weight:400;font-size:38px;line-height:1;}
+  .seal .mono small{font-size:10px;letter-spacing:.3em;text-transform:uppercase;margin-top:8px;font-weight:600;}
+  .seal .mono small.kn{letter-spacing:.05em;font-size:11px;}
+  .seal{animation:pulse 2.4s ease-in-out infinite;}
+  @keyframes pulse{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.05)}}
+  .gate.open .seal{animation:none;transform:translate(-50%,-50%) scale(1.6);opacity:0}
+  .gate-hint{position:absolute;left:0;right:0;bottom:calc(36px + env(safe-area-inset-bottom));text-align:center;color:#f3ebdd;font-size:15px;font-style:italic;letter-spacing:.04em;z-index:3;transition:opacity .4s;text-shadow:0 1px 4px rgba(0,0,0,.3)}
+  .gate.open .gate-hint{opacity:0}
+  .gate.gone{display:none}
+
+  /* ================= FLOATING CONTROLS ================= */
+  .fab{position:fixed;z-index:60;border:0;cursor:pointer;font-family:inherit;
+    background:rgba(250,246,238,.82);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:var(--sage-dd);
+    box-shadow:0 4px 14px rgba(40,50,30,.18);border:1px solid rgba(194,164,107,.45);}
+  .fab-wrap{position:fixed;left:0;right:0;top:0;bottom:0;pointer-events:none;z-index:60;display:flex;justify-content:center}
+  .fab-area{position:relative;width:100%;max-width:480px;height:100%;}
+  .fab-area .fab{position:absolute;pointer-events:auto;}
+  .music{top:calc(14px + env(safe-area-inset-top));right:14px;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;}
+  .music svg{width:18px;height:18px}
+  .music.playing svg .wave{animation:wave 1s ease-in-out infinite alternate}
+  @keyframes wave{to{opacity:.25}}
+  .lang{bottom:calc(16px + env(safe-area-inset-bottom));left:14px;border-radius:30px;padding:8px 16px 8px 12px;font-size:15px;display:flex;align-items:center;gap:7px;font-weight:600;}
+  .lang svg{width:15px;height:15px}
+  .fab[hidden]{display:none}
+
+  /* ================= HERO (curtains + garden) ================= */
+  .hero{position:relative;min-height:100svh;background:radial-gradient(90% 60% at 50% 40%,#fbf7ef 0%,#f3ebdd 70%,#ece1cd 100%);overflow:hidden;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:104px 24px 0;}
+  .valance{position:absolute;top:0;left:0;width:100%;height:auto;z-index:5;pointer-events:none;}
+  .curtain{position:absolute;top:0;width:51%;height:100%;z-index:4;pointer-events:none;
+    background:repeating-linear-gradient(90deg,#efe3cf 0,#fbf6ec 9px,#f4eadb 17px,#e2d2b9 27px,#efe3cf 34px);
+    transition:width 2.4s cubic-bezier(.6,.05,.25,1) .5s,height 2.4s cubic-bezier(.6,.05,.25,1) .5s,border-radius 2.4s ease .5s;}
+  .curtain.l{left:0;border-right:5px dotted #fffaf0;box-shadow:6px 0 18px rgba(120,95,60,.18)}
+  .curtain.r{right:0;border-left:5px dotted #fffaf0;box-shadow:-6px 0 18px rgba(120,95,60,.18)}
+  .opened .curtain.l{width:13%;height:54%;border-bottom-right-radius:100% 70%;}
+  .opened .curtain.r{width:13%;height:54%;border-bottom-left-radius:100% 70%;}
+  .tieback{position:absolute;top:44%;width:26px;z-index:5;opacity:0;transition:opacity 1s ease 2.6s;}
+  .tieback.l{left:3%}.tieback.r{right:3%;transform:scaleX(-1)}
+  .opened .tieback{opacity:1}
+  .hero-content{position:relative;z-index:3;width:74%;max-width:330px;padding-bottom:calc(min(50vw,240px) + 24px);}
+  .scroll-cue{margin-top:26px;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-d);font-weight:600;}
+  .scroll-cue.kn{letter-spacing:.02em;text-transform:none;}
+  .scroll-cue span{display:block;font-size:16px;margin-top:2px;animation:bob 2.2s ease-in-out infinite}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+  .hero .blessing{font-size:10.5px;color:#8a6b3c;line-height:1.9;margin-bottom:14px;}
+  .heart-rule{display:flex;align-items:center;justify-content:center;gap:10px;color:var(--ink);margin:6px auto 10px;}
+  .heart-rule::before,.heart-rule::after{content:"";width:46px;height:1px;background:linear-gradient(90deg,transparent,#8d877a);}
+  .heart-rule::after{background:linear-gradient(90deg,#8d877a,transparent)}
+  .heart-rule span{font-size:14px;line-height:1}
+  .getting{font-style:italic;font-size:19px;color:#5a574e;}
+  .getting.kn{font-style:normal;font-size:16px;}
+  .h-name{font-size:clamp(34px,10.4vw,50px);line-height:1.05;color:#3a3832;margin-top:10px;}
+  .h-name.kn{font-family:'Noto Serif Kannada',serif;font-size:21px;line-height:1.45;font-weight:600;margin-top:14px;}
+  .h-of{font-size:13.5px;font-style:italic;color:var(--muted);line-height:1.45;margin-top:4px;}
+  .h-of.kn{font-style:normal;font-size:12px;}
+  .h-amp{font-size:40px;color:var(--gold-d);line-height:1;margin:10px 0 0;}
+  .h-date{margin-top:18px;font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:var(--sage-dd);font-weight:600;}
+  .h-date.kn{letter-spacing:.02em;text-transform:none;font-size:13px;}
+  .garden{position:absolute;left:0;right:0;bottom:0;width:100%;z-index:2;}
+  .garden .water{stroke-dasharray:4 6;animation:flow 1.2s linear infinite}
+  @keyframes flow{to{stroke-dashoffset:-20}}
+  .h-anim{opacity:0;transform:translateY(16px);transition:opacity 1.2s ease,transform 1.2s ease;}
+  .opened .h-anim{opacity:1;transform:none}
+  .opened .h-anim:nth-child(2){transition-delay:1.5s}.opened .h-anim:nth-child(3){transition-delay:1.7s}
+  .opened .h-anim:nth-child(4){transition-delay:1.9s}.opened .h-anim:nth-child(5){transition-delay:2.1s}
+  .opened .h-anim:nth-child(6){transition-delay:2.3s}.opened .h-anim:nth-child(7){transition-delay:2.5s}
+  .opened .h-anim:nth-child(n+8){transition-delay:2.7s}
+
+  /* ================= SECTIONS ================= */
+  .sec{padding:64px 30px;text-align:center;position:relative;}
+  .sec + .sec{border-top:1px solid rgba(194,164,107,.22);}
+  .sec-title{font-family:'Pinyon Script',cursive;font-weight:400;font-size:40px;line-height:1.1;color:#3a3832;}
+  .sec-title.kn{font-family:'Noto Serif Kannada',serif;font-size:24px;font-weight:600;}
+  .lead{font-style:italic;font-size:19px;line-height:1.6;color:#4d4a42;max-width:330px;margin:0 auto;}
+  .lead.kn{font-style:normal;font-size:15px;line-height:1.9;}
+  .small-note{font-size:14px;color:var(--muted);font-style:italic;margin-top:18px;line-height:1.6;}
+  .small-note.kn{font-style:normal;font-size:12.5px;line-height:1.9;}
+
+  .pill{display:inline-flex;align-items:center;justify-content:center;gap:9px;margin-top:22px;padding:13px 28px;border-radius:40px;border:0;cursor:pointer;
+    background:linear-gradient(180deg,#5c6b4c,#46533a);color:#f4ecdc;font-family:inherit;font-size:14px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;text-decoration:none;
+    box-shadow:0 10px 22px rgba(62,73,53,.3),inset 0 1px 0 rgba(255,255,255,.18);transition:transform .3s ease,box-shadow .3s ease;}
+  .pill.kn{letter-spacing:.02em;text-transform:none;font-size:14px;}
+  .pill:hover{transform:translateY(-2px)}
+  .pill svg{width:15px;height:15px}
+  .link-sm{display:inline-block;margin-top:8px;font-size:13px;color:var(--sage-d);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(95,110,79,.35);}
+
+  /* scratch heart */
+  .scratch{position:relative;width:250px;height:230px;margin:26px auto 0;}
+  .scratch .under{position:absolute;inset:0;}
+  .scratch .under svg{position:absolute;inset:0;width:100%;height:100%;}
+  .scratch .under .txt{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:52px 40px 30px;text-align:center;}
+  .scratch .day{font-size:13px;letter-spacing:.25em;text-transform:uppercase;color:var(--sage-d);font-weight:600;}
+  .scratch .big{font-size:44px;line-height:1;color:#3a3832;margin:4px 0;}
+  .scratch .tm{font-size:15px;font-weight:600;color:var(--ink);}
+  .scratch .lg{font-size:12px;font-style:italic;color:var(--muted);}
+  .scratch canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:grab;transition:opacity .8s ease;}
+  .scratch canvas.gone{opacity:0;pointer-events:none}
+  .save-wrap{opacity:0;transform:translateY(10px);transition:all .7s ease;pointer-events:none;}
+  .save-wrap.show{opacity:1;transform:none;pointer-events:auto}
+  .confetti{position:absolute;inset:0;pointer-events:none;overflow:visible;}
+  .confetti i{position:absolute;left:50%;top:45%;font-style:normal;font-size:14px;color:var(--sage-d);opacity:0;animation:burst 1.6s ease-out forwards;}
+  @keyframes burst{0%{opacity:1;transform:translate(-50%,-50%) scale(.4)}100%{opacity:0;transform:translate(calc(-50% + var(--x)),calc(-50% + var(--y))) scale(1.1) rotate(var(--r))}}
+
+  /* carousel */
+  .carousel{position:relative;margin:0 -10px;border-radius:22px;overflow:hidden;box-shadow:0 18px 40px rgba(60,55,40,.18);background:var(--cream);}
+  .track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;}
+  .track::-webkit-scrollbar{display:none}
+  .slide{flex:0 0 100%;scroll-snap-align:center;aspect-ratio:4/5;position:relative;}
+  .slide img{width:100%;height:100%;object-fit:cover;}
+  .slide.pair{display:flex;align-items:flex-end;justify-content:center;gap:4px;background:#fcf0da;padding-top:14px;}
+  .slide.pair img{width:48%;height:100%;object-fit:contain;object-position:bottom;}
+  .dots{position:absolute;left:0;right:0;bottom:12px;display:flex;justify-content:center;gap:7px;}
+  .dots b{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.6);box-shadow:0 0 0 1px rgba(0,0,0,.08);transition:all .3s;}
+  .dots b.on{background:#fff;width:18px;border-radius:5px;}
+
+  /* countdown */
+  .count{display:flex;justify-content:center;gap:9px;margin-top:24px;}
+  .unit{flex:1;max-width:74px;background:#fff;border:1px solid var(--sand);border-radius:12px;padding:14px 4px 10px;box-shadow:0 6px 16px rgba(80,70,50,.07);}
+  .unit .n{font-size:30px;font-weight:500;line-height:1;color:#3a3832;}
+  .unit .c{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:6px;}
+  .unit .c.kn{letter-spacing:0;text-transform:none;font-size:11px;}
+
+  /* timeline */
+  .clock{width:26px;height:26px;margin:0 auto 6px;color:#5a574e}
+  .timeline{position:relative;list-style:none;text-align:left;max-width:320px;margin:28px auto 0;padding-left:26px;}
+  .timeline::before{content:"";position:absolute;left:6px;top:8px;bottom:8px;width:1px;background:linear-gradient(#c9bda5,#c9bda5 60%,transparent);}
+  .timeline li{position:relative;padding-bottom:26px;}
+  .timeline li::before{content:"";position:absolute;left:-25px;top:8px;width:11px;height:11px;border-radius:50%;background:var(--sage-d);box-shadow:0 0 0 4px var(--ivory),0 0 0 5px #c9bda5;}
+  .timeline h4{font-size:21px;font-weight:600;line-height:1.2;color:#3a3832;}
+  .timeline h4.kn{font-size:17px;}
+  .timeline .when{font-size:15px;color:var(--ink);margin-top:2px;}
+  .timeline .when.kn{font-size:13px;}
+  .timeline .note{font-size:14.5px;font-style:italic;color:var(--muted);}
+  .timeline .note.kn{font-style:normal;font-size:12.5px;}
+
+  /* venue */
+  .venue-name{font-size:26px;font-weight:600;line-height:1.2;margin-top:10px;color:#3a3832;}
+  .venue-name.kn{font-size:19px;}
+  .venue-addr{font-size:16px;color:var(--muted);font-style:italic;}
+  .venue-addr.kn{font-style:normal;font-size:13px;}
+  .map{margin-top:22px;border-radius:18px;overflow:hidden;border:1px solid var(--sand);box-shadow:0 14px 30px rgba(60,55,40,.12);line-height:0;}
+  .map iframe{width:100%;height:250px;border:0;filter:saturate(.75) sepia(.12);}
+
+  /* families */
+  .bless{font-size:16px;color:var(--muted);font-style:italic;}
+  .bless.kn{font-style:normal;font-size:13px;line-height:1.9;}
+  .bless b{display:block;font-style:normal;font-weight:600;font-size:19px;color:#3a3832;margin-top:4px;}
+  .fam{list-style:none;margin-top:26px;display:flex;flex-direction:column;gap:13px;}
+  .fam li{font-size:15px;color:var(--muted);line-height:1.45;}
+  .fam li.kn{font-size:12.5px;line-height:1.8;}
+  .fam li b{display:block;font-weight:600;font-size:17.5px;color:#3a3832;}
+  .fam li.kn b{font-size:14px;}
+  .fam li + li{padding-top:13px;border-top:1px dashed rgba(194,164,107,.4);}
+
+  /* footer */
+  .foot{background:linear-gradient(180deg,#6c7c5a,#4b5840);color:#f3ebdd;padding:58px 28px calc(84px + env(safe-area-inset-bottom));text-align:center;position:relative;overflow:hidden;}
+  .foot .leafbg{position:absolute;inset:0;opacity:.35;pointer-events:none;}
+  .foot > *:not(.leafbg){position:relative}
+  .foot .with{font-style:italic;font-size:17px;opacity:.9}
+  .foot .with.kn{font-style:normal;font-size:14px}
+  .foot .fn{font-family:'Pinyon Script',cursive;font-size:44px;line-height:1.15;margin-top:6px;color:#fff8e8;}
+  .foot .fd{margin-top:12px;font-size:13px;letter-spacing:.3em;text-transform:uppercase;opacity:.85}
+  .foot .pill{background:#f3ebdd;color:var(--sage-dd);box-shadow:0 10px 22px rgba(0,0,0,.2);}
+  .h-portrait{display:none;width:132px;margin:4px auto 16px;padding:4px;border-radius:70px 70px 12px 12px;background:var(--gold-foil);box-shadow:0 12px 26px rgba(120,95,60,.25);}
+  .h-portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 15%;border-radius:66px 66px 9px 9px;}
+  @media (min-height:780px){
+    .hero .blessing{font-size:12px;margin-bottom:22px}
+    .getting{font-size:22px}.getting.kn{font-size:18px}
+    .h-name{font-size:clamp(40px,12vw,58px)}.h-name.kn{font-size:clamp(21px,6vw,26px)}
+    .h-of{font-size:15px}.h-of.kn{font-size:13px}
+    .h-amp{font-size:48px;margin:16px 0 4px}
+    .h-date{margin-top:26px;font-size:14px}
+    .scroll-cue{margin-top:34px}
+  }
+  @media (min-height:900px){.h-portrait{display:block}}
+</style>
+</head>
+<body class="locked">
+
+<!-- shared SVG defs: embossed leaf pattern for doors & footer -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <g id="sprig">
+      <path d="M10 130 C 30 100, 50 70, 70 20" fill="none" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M22 108 c-16-4-24-16-22-28 c12 2 22 12 22 28z"/>
+      <path d="M26 104 c14-10 28-10 36-2 c-10 8-24 10-36 2z"/>
+      <path d="M38 84 c-16-6-22-18-18-30 c12 4 20 16 18 30z"/>
+      <path d="M42 80 c14-12 28-12 36-4 c-10 9-24 11-36 4z"/>
+      <path d="M54 58 c-14-8-18-20-12-30 c11 6 16 18 12 30z"/>
+      <path d="M58 54 c12-12 26-14 34-8 c-8 10-22 13-34 8z"/>
+      <path d="M68 24 c-6-12-2-22 6-26 c6 10 4 20-6 26z"/>
+    </g>
+    <pattern id="leafs" width="130" height="150" patternUnits="userSpaceOnUse" patternTransform="rotate(-18)">
+      <g transform="translate(18,6)">
+        <use href="#sprig" transform="translate(1.6,1.8)" fill="#5d6c4c" stroke="#5d6c4c" opacity=".55"/>
+        <use href="#sprig" transform="translate(-1,-1)" fill="#b5c2a2" stroke="#b5c2a2" opacity=".55"/>
+        <use href="#sprig" fill="#8b9a77" stroke="#8b9a77"/>
+      </g>
+      <g transform="translate(84,82) scale(-.7,.7)">
+        <use href="#sprig" transform="translate(1.6,1.8)" fill="#5d6c4c" stroke="#5d6c4c" opacity=".5"/>
+        <use href="#sprig" transform="translate(-1,-1)" fill="#b5c2a2" stroke="#b5c2a2" opacity=".5"/>
+        <use href="#sprig" fill="#8b9a77" stroke="#8b9a77"/>
+      </g>
+    </pattern>
+    <path id="heartPath" d="M125 214 C 44 156, 6 112, 14 66 C 22 22, 84 6, 125 54 C 166 6, 228 22, 236 66 C 244 112, 206 156, 125 214 Z"/>
+  </defs>
+</svg>
+
+<!-- ============ GATE ============ -->
+<div class="gate" id="gate">
+  <div class="gate-inner" id="gateInner" role="button" tabindex="0" aria-label="Tap to open the invitation">
+    <div class="door l"><svg aria-hidden="true"><rect width="100%" height="100%" fill="url(#leafs)"/></svg><div class="vignette"></div><div class="pearls"></div></div>
+    <div class="door r"><svg aria-hidden="true"><rect width="100%" height="100%" fill="url(#leafs)"/></svg><div class="vignette"></div><div class="pearls"></div></div>
+    <div class="seal">
+      <svg viewBox="0 0 200 200" aria-hidden="true">
+        <defs><radialGradient id="sealg" cx="45%" cy="40%" r="70%"><stop offset="0" stop-color="#fbf3e2"/><stop offset="1" stop-color="#e8d6b2"/></radialGradient></defs>
+        <g id="scallop" fill="url(#sealg)" stroke="#b59656" stroke-width="1.5"></g>
+        <circle cx="100" cy="100" r="74" fill="url(#sealg)"/>
+        <circle cx="100" cy="100" r="66" fill="none" stroke="#b59656" stroke-width="1.2"/>
+        <circle cx="100" cy="100" r="61" fill="none" stroke="#b59656" stroke-width=".6" stroke-dasharray="2 4"/>
+        <path d="M70 140 q30 14 60 0 M82 58 q18-10 36 0" fill="none" stroke="#b59656" stroke-width="1"/>
+      </svg>
+      <div class="mono"><b>L &amp; K</b><small class="en">Tap to open</small><small class="kn">ತೆರೆಯಲು ಸ್ಪರ್ಶಿಸಿ</small></div>
+    </div>
+    <div class="gate-hint"><span class="en">You're invited ✦</span><span class="kn">ತಮಗೆ ಆದರದ ಆಹ್ವಾನ ✦</span></div>
+  </div>
+</div>
+
+<!-- ============ FLOATING CONTROLS ============ -->
+<div class="fab-wrap">
+  <div class="fab-area">
+    <button class="fab music" id="musicBtn" type="button" aria-label="Play or pause music" hidden>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path class="wave" d="M16.5 8.5a5 5 0 0 1 0 7"/><path class="wave" d="M19 6a8.5 8.5 0 0 1 0 12"/></svg>
+    </button>
+    <button class="fab lang" id="langBtn" type="button" aria-label="Switch language">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.8 3 2.8 15 0 18M12 3c-2.8 3-2.8 15 0 18"/></svg>
+      <span class="en knt">ಕನ್ನಡ</span><span class="kn" style="font-family:'Cormorant Garamond',serif">English</span>
+    </button>
+  </div>
+</div>
+<audio id="bgm" src="music.mp3" loop preload="metadata"></audio>
+
+<div class="app">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <svg class="valance" viewBox="0 0 400 96" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="sw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6eddd"/><stop offset=".6" stop-color="#efe2cb"/><stop offset="1" stop-color="#e1cfb2"/></linearGradient>
+      </defs>
+      <rect x="0" y="0" width="400" height="10" fill="#e9dcc4"/>
+      <g fill="url(#sw)" stroke="#dccbae" stroke-width=".8">
+        <path d="M-10 6 Q 60 92 140 6 Z"/><path d="M130 6 Q 200 98 270 6 Z"/><path d="M260 6 Q 340 92 410 6 Z"/>
+      </g>
+      <g fill="none" stroke="#fffaf0" stroke-width="5" stroke-linecap="round" stroke-dasharray="0 8.5">
+        <path d="M-10 10 Q 60 96 140 10"/><path d="M130 10 Q 200 102 270 10"/><path d="M260 10 Q 340 96 410 10"/>
+      </g>
+      <g fill="none" stroke="#e0d0b4" stroke-width="5.6" stroke-linecap="round" stroke-dasharray="0 8.5" opacity=".5" transform="translate(.6,.8)">
+        <path d="M-10 10 Q 60 96 140 10"/><path d="M130 10 Q 200 102 270 10"/><path d="M260 10 Q 340 96 410 10"/>
+      </g>
+      <g fill="#c2a46b"><circle cx="135" cy="8" r="5"/><circle cx="265" cy="8" r="5"/></g>
+    </svg>
+    <div class="curtain l"></div>
+    <div class="curtain r"></div>
+    <svg class="tieback l" viewBox="0 0 26 60" aria-hidden="true"><path d="M2 6 q12 6 22 0" stroke="#c2a46b" stroke-width="3" fill="none"/><circle cx="13" cy="10" r="5" fill="#c2a46b"/><path d="M9 14 h8 l3 30 h-14z" fill="#d7bd84"/><path d="M8 44 h10" stroke="#9c7f45" stroke-width="2"/></svg>
+    <svg class="tieback r" viewBox="0 0 26 60" aria-hidden="true"><path d="M2 6 q12 6 22 0" stroke="#c2a46b" stroke-width="3" fill="none"/><circle cx="13" cy="10" r="5" fill="#c2a46b"/><path d="M9 14 h8 l3 30 h-14z" fill="#d7bd84"/><path d="M8 44 h10" stroke="#9c7f45" stroke-width="2"/></svg>
+
+    <div class="hero-content">
+      <p class="blessing knt h-anim">॥ ಶ್ರೀ ಕಂಚಿರಾಯ ಸ್ವಾಮಿ ಪ್ರಸನ್ನ ॥<br>॥ ಶ್ರೀ ವೀರಭದ್ರೇಶ್ವರ ಸ್ವಾಮಿ ಪ್ರಸನ್ನ ॥</p>
+      <div class="h-anim"><div class="h-portrait"><img src="img/couple.jpg" alt="Lohith and Kumuda Priya"></div><div class="heart-rule"><span>♥</span></div>
+        <p class="getting en">We're getting married</p><p class="getting kn">ಶುಭ ವಿವಾಹ</p></div>
+      <div class="h-anim">
+        <h1 class="h-name script en">Lohith</h1><h1 class="h-name kn">ಚಿ॥ ರಾ॥ ಲೋಹಿತ್ ಟಿ.ಎಸ್</h1>
+        <p class="h-of en">Son of Smt. Shashikala &amp;<br>Sri Subramanyaswamy</p>
+        <p class="h-of kn">ಶ್ರೀಮತಿ ಶಶಿಕಲ ಮತ್ತು ಶ್ರೀ ಸುಬ್ರಮಣ್ಯಸ್ವಾಮಿ ರವರ ಪುತ್ರ</p>
+      </div>
+      <div class="h-anim h-amp script">&amp;</div>
+      <div class="h-anim">
+        <h1 class="h-name script en">Kumuda Priya</h1><h1 class="h-name kn">ಚಿ॥ ಸೌ॥ ಕುಮುದ ಪ್ರಿಯ ಎನ್.ಪಿ</h1>
+        <p class="h-of en">Daughter of Smt. Bhuvaneshwari &amp;<br>Late Sri Prasannakumar</p>
+        <p class="h-of kn">ಶ್ರೀಮತಿ ಭುವನೇಶ್ವರಿ ಮತ್ತು ಲೇಟ್. ಶ್ರೀ ಪ್ರಸನ್ನಕುಮಾರ್ ರವರ ಪುತ್ರಿ</p>
+      </div>
+      <div class="h-anim"><p class="h-date en">20 · 11 · 2026</p><p class="h-date kn">ತಾ: 20-11-2026, ಶುಕ್ರವಾರ</p></div>
+      <div class="h-anim"><p class="scroll-cue en">Scroll<span>↓</span></p><p class="scroll-cue kn">ಕೆಳಗೆ ಸರಿಸಿ<span>↓</span></p></div>
+    </div>
+
+    <!-- garden: balustrade, topiary pillars, fountain, rose bushes -->
+    <svg class="garden" viewBox="0 0 400 200" aria-hidden="true">
+      <defs>
+        <linearGradient id="stone" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7f1e6"/><stop offset="1" stop-color="#e3d6c0"/></linearGradient>
+        <radialGradient id="topi" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#8ea477"/><stop offset="1" stop-color="#4e6440"/></radialGradient>
+        <linearGradient id="wat" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfe2e0"/><stop offset="1" stop-color="#9fbcbb"/></linearGradient>
+        <g id="baluster"><path d="M0 0 h10 v3 q-4 3 -2 9 q4 6 2 14 v4 h-10 v-4 q-2-8 2-14 q2-6-2-9z" fill="url(#stone)" stroke="#d3c3a6" stroke-width=".6"/></g>
+      </defs>
+      <path d="M0 176 Q200 160 400 176 V200 H0Z" fill="#dfe3cf"/>
+      <!-- balustrade -->
+      <rect x="0" y="118" width="400" height="7" fill="url(#stone)" stroke="#d3c3a6" stroke-width=".6"/>
+      <g id="balusters"></g>
+      <rect x="0" y="155" width="400" height="9" fill="url(#stone)" stroke="#d3c3a6" stroke-width=".6"/>
+      <!-- pillars with topiary -->
+      <g>
+        <rect x="14" y="94" width="40" height="76" fill="url(#stone)" stroke="#d3c3a6" stroke-width=".7"/>
+        <rect x="10" y="88" width="48" height="8" fill="#efe6d6" stroke="#d3c3a6" stroke-width=".6"/>
+        <path d="M24 88 h20 l-3 -12 h-14z" fill="#e7dac3" stroke="#cdbc9c" stroke-width=".6"/>
+        <circle cx="34" cy="62" r="17" fill="url(#topi)"/><circle cx="34" cy="38" r="12" fill="url(#topi)"/><circle cx="34" cy="21" r="8" fill="url(#topi)"/>
+        <rect x="346" y="94" width="40" height="76" fill="url(#stone)" stroke="#d3c3a6" stroke-width=".7"/>
+        <rect x="342" y="88" width="48" height="8" fill="#efe6d6" stroke="#d3c3a6" stroke-width=".6"/>
+        <path d="M356 88 h20 l-3 -12 h-14z" fill="#e7dac3" stroke="#cdbc9c" stroke-width=".6"/>
+        <circle cx="366" cy="62" r="17" fill="url(#topi)"/><circle cx="366" cy="38" r="12" fill="url(#topi)"/><circle cx="366" cy="21" r="8" fill="url(#topi)"/>
+      </g>
+      <!-- fountain -->
+      <g>
+        <ellipse cx="200" cy="182" rx="80" ry="13" fill="url(#stone)" stroke="#d3c3a6"/>
+        <ellipse cx="200" cy="179" rx="70" ry="8.5" fill="url(#wat)"/>
+        <path d="M193 178 v-34 h14 v34z" fill="url(#stone)" stroke="#d3c3a6" stroke-width=".6"/>
+        <path d="M168 142 q32 16 64 0 l-6 -6 h-52z" fill="url(#stone)" stroke="#d3c3a6" stroke-width=".6"/>
+        <path d="M197 136 v-14 h6 v14z" fill="url(#stone)"/>
+        <circle cx="200" cy="119" r="4" fill="#efe6d6" stroke="#d3c3a6" stroke-width=".6"/>
+        <g fill="none" stroke="#bcd5d3" stroke-width="1.6" stroke-linecap="round" class="water">
+          <path d="M200 116 q-18 -18 -30 22"/><path d="M200 116 q18 -18 30 22"/><path d="M200 116 q-8 -24 -16 22"/><path d="M200 116 q8 -24 16 22"/>
+          <path d="M172 144 q-10 6 -14 32"/><path d="M228 144 q10 6 14 32"/>
+        </g>
+      </g>
+      <g id="bushes"></g>
+    </svg>
+  </section>
+
+  <!-- ============ WELCOME + SCRATCH ============ -->
+  <section class="sec" id="welcome">
+    <div class="heart-rule reveal"><span>♥</span></div>
+    <p class="lead en reveal">With the blessings of our elders, we are honoured to welcome you and your family to the wedding of <b>Lohith &amp; Kumuda Priya</b> as they begin their journey together. Kindly grace the occasion and bless the couple.</p>
+    <p class="lead kn reveal">ಇವರ ವಿವಾಹ ಮಹೋತ್ಸವವನ್ನು ಶ್ರೀ ಮಾತ ಕನ್ವೆಂಷನ್ ಹಾಲ್, ಕೆ.ಬಿ ಕ್ರಾಸ್, ತಿಪಟೂರು ತಾ. ಇಲ್ಲಿ ನೆರವೇರಿಸಲು ಗುರು-ಹಿರಿಯರು ನಿಶ್ಚಯಿಸಿರುವುದರಿಂದ ತಾವು ಸಕುಟುಂಬ ಸಮೇತರಾಗಿ ಆಗಮಿಸಿ ವಧು-ವರರನ್ನು ಆಶೀರ್ವದಿಸಿ.</p>
+    <p class="small-note en reveal">Sri Parabhava Samvatsara · Kartika Masa, Shukla Paksha · Dashami, then Ekadashi · Uttarabhadra Nakshatra · Shalivahana Shaka 1948</p>
+    <p class="small-note kn reveal">ಶ್ರೀ ಪರಾಭವ ನಾಮ ಸಂವತ್ಸರದ ಕಾರ್ತಿಕ ಮಾಸ ಶುಕ್ಲ ಪಕ್ಷ, ದಶಮಿ ಉಪರಿ ಏಕಾದಶಿ, ಉತ್ತರಾಭಾದ್ರ ನಕ್ಷತ್ರ</p>
+
+    <div style="margin-top:46px" class="reveal">
+      <h2 class="sec-title en">Scratch to Reveal</h2><h2 class="sec-title kn">ಉಜ್ಜಿ ನೋಡಿ</h2>
+      <div class="heart-rule"><span style="font-size:9px">♥</span></div>
+    </div>
+    <div class="scratch reveal" id="scratch">
+      <div class="under">
+        <svg viewBox="0 0 250 230" aria-hidden="true">
+          <use href="#heartPath" fill="#fffaf2" stroke="#c2a46b" stroke-width="1.5"/>
+          <use href="#heartPath" fill="none" stroke="#c2a46b" stroke-width=".6" stroke-dasharray="2 4" transform="translate(125 115) scale(.92) translate(-125 -115)"/>
+        </svg>
+        <div class="txt">
+          <div class="day en">Friday</div><div class="day kn">ಶುಕ್ರವಾರ</div>
+          <div class="big script">20 Nov</div>
+          <div class="tm en">2026 · 9:50 – 10:20 AM</div><div class="tm kn">2026 · ಬೆಳಿಗ್ಗೆ 9-50 ರಿಂದ 10-20</div>
+          <div class="lg en">Shubha Dhanur Lagna</div><div class="lg kn">ಶುಭ ಧನುರ್ ಲಗ್ನ</div>
+        </div>
+      </div>
+      <canvas id="scratchCanvas" aria-label="Scratch the heart to reveal the muhurtham"></canvas>
+      <div class="confetti" id="confetti"></div>
+    </div>
+    <div class="save-wrap" id="saveWrap">
+      <a class="pill" target="_blank" rel="noopener"
+         href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding%20of%20Lohith%20%26%20Kumuda%20Priya%20%E2%80%94%20Muhurtham&dates=20261120T042000Z/20261120T045000Z&location=Sri%20Matha%20Convention%20Hall%2C%20K.B.%20Cross%2C%20Tiptur&details=Muhurtham%209%3A50%E2%80%9310%3A20%20AM%20(Dhanur%20Lagna)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+        <span class="en">Save the date</span><span class="kn">ದಿನಾಂಕ ಉಳಿಸಿ</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ PHOTOS + COUNTDOWN ============ -->
+  <section class="sec">
+    <div class="carousel reveal">
+      <div class="track" id="track">
+        <div class="slide"><img src="img/couple.jpg" alt="Lohith and Kumuda Priya"></div>
+        <div class="slide"><img src="img/mandap.jpg" alt="The couple at the mandap" loading="lazy" style="object-position:50% 60%"></div>
+        <div class="slide pair"><img src="img/groom.jpg" alt="Groom" loading="lazy"><img src="img/bride.jpg" alt="Bride" loading="lazy"></div>
+      </div>
+      <div class="dots" id="dots"><b class="on"></b><b></b><b></b></div>
+    </div>
+    <div style="margin-top:44px" class="reveal">
+      <h2 class="sec-title en">Counting Down to Forever</h2><h2 class="sec-title kn">ಶುಭ ಮುಹೂರ್ತಕ್ಕೆ ಇನ್ನು</h2>
+    </div>
+    <div class="count reveal" id="count">
+      <div class="unit"><div class="n" id="d">00</div><div class="c en">Days</div><div class="c kn">ದಿನ</div></div>
+      <div class="unit"><div class="n" id="h">00</div><div class="c en">Hours</div><div class="c kn">ಗಂಟೆ</div></div>
+      <div class="unit"><div class="n" id="m">00</div><div class="c en">Minutes</div><div class="c kn">ನಿಮಿಷ</div></div>
+      <div class="unit"><div class="n" id="s">00</div><div class="c en">Seconds</div><div class="c kn">ಸೆಕೆಂಡು</div></div>
+    </div>
+  </section>
+
+  <!-- ============ TIMELINE ============ -->
+  <section class="sec">
+    <svg class="clock reveal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+    <h2 class="sec-title en reveal">Program Timeline</h2><h2 class="sec-title kn reveal">ಕಾರ್ಯಕ್ರಮಗಳು</h2>
+    <ul class="timeline">
+      <li class="reveal">
+        <h4 class="en">Prathama Shastra</h4><h4 class="kn">ಪ್ರಥಮ ಶಾಸ್ತ್ರ</h4>
+        <div class="when en">Thu, 19 Nov 2026</div><div class="when kn">ತಾ: 19-11-2026, ಗುರುವಾರ</div>
+        <div class="note en">The first rituals begin.</div><div class="note kn">ಶುಭ ಕಾರ್ಯಗಳ ಆರಂಭ</div>
+      </li>
+      <li class="reveal">
+        <h4 class="en">Aaratakshate (Reception)</h4><h4 class="kn">ಆರತಕ್ಷತೆ</h4>
+        <div class="when en">Thu, 19 Nov 2026 · 6:30 PM onwards</div><div class="when kn">ತಾ: 19-11-2026, ಗುರುವಾರ ಸಂಜೆ 6-30 ರಿಂದ</div>
+        <div class="note en">An evening of blessings with family &amp; friends.</div><div class="note kn">ವಧು-ವರರನ್ನು ಹರಸಲು ಬನ್ನಿ</div>
+        <a class="link-sm" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Aaratakshate%20%E2%80%94%20Lohith%20%26%20Kumuda%20Priya&dates=20261119T130000Z/20261119T163000Z&location=Sri%20Matha%20Convention%20Hall%2C%20K.B.%20Cross%2C%20Tiptur"><span class="en">＋ Add to calendar</span><span class="kn">＋ ಕ್ಯಾಲೆಂಡರ್‌ಗೆ ಸೇರಿಸಿ</span></a>
+      </li>
+      <li class="reveal">
+        <h4 class="en">Muhurtham</h4><h4 class="kn">ಮುಹೂರ್ತ</h4>
+        <div class="when en">Fri, 20 Nov 2026 · 9:50 – 10:20 AM</div><div class="when kn">ತಾ: 20-11-2026, ಶುಕ್ರವಾರ ಬೆಳಿಗ್ಗೆ 9-50 ರಿಂದ 10-20 ಗಂಟೆಗೆ</div>
+        <div class="note en">Shubha Dhanur Lagna — your presence means a lot!</div><div class="note kn">ಶುಭ ಧನುರ್ ಲಗ್ನದಲ್ಲಿ</div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ============ VENUE ============ -->
+  <section class="sec">
+    <h2 class="sec-title en reveal">Venue</h2><h2 class="sec-title kn reveal">ಸ್ಥಳ</h2>
+    <div class="heart-rule reveal"><span style="font-size:9px">♥</span></div>
+    <div class="venue-name en reveal">Sri Matha Convention Hall</div><div class="venue-name kn reveal">ಶ್ರೀ ಮಾತ ಕನ್ವೆಂಷನ್ ಹಾಲ್</div>
+    <div class="venue-addr en reveal">K.B. Cross, Tiptur Taluk</div><div class="venue-addr kn reveal">ಕೆ.ಬಿ ಕ್ರಾಸ್, ತಿಪಟೂರು ತಾ.</div>
+    <div class="map reveal">
+      <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map to Sri Matha Convention Hall"
+        src="https://www.google.com/maps?q=Sri+Matha+Convention+Hall,+K+B+Cross,+Tiptur&output=embed"></iframe>
+    </div>
+    <a class="pill reveal" target="_blank" rel="noopener" href="https://maps.app.goo.gl/5GcK2nCUKtHVyjbb6">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+      <span class="en">View on Google Maps</span><span class="kn">ಗೂಗಲ್ ಮ್ಯಾಪ್‌ನಲ್ಲಿ ನೋಡಿ</span>
+    </a>
+  </section>
+
+  <!-- ============ FAMILIES ============ -->
+  <section class="sec">
+    <p class="bless en reveal">With the blessings of<b>Late Smt. Lalithamma &amp; Late Sri Prabhuswamy</b></p>
+    <p class="bless kn reveal">ಲೇಟ್. ಶ್ರೀಮತಿ ಲಲಿತಮ್ಮ ಮತ್ತು ಲೇಟ್. ಶ್ರೀ ಪ್ರಭುಸ್ವಾಮಿ<br>ಇವರ ಆಶೀರ್ವಾದದೊಂದಿಗೆ</p>
+    <div style="margin-top:40px" class="reveal">
+      <h2 class="sec-title en">Awaiting Your Presence</h2><h2 class="sec-title kn">ತಮ್ಮ ಸುಖಾಗಮನವನ್ನು ಬಯಸುವವರು</h2>
+    </div>
+    <ul class="fam en">
+      <li class="reveal"><b>Smt. Lalithamma &amp; Prabhuswamy</b>children, sons-in-law &amp; grandchildren · Tigalanahalli, C.N. Halli Tq.</li>
+      <li class="reveal"><b>Smt. Shambhulingamma &amp; Basavarajappa</b>children, sons-in-law &amp; grandchildren · Hosahalli, Tiptur Tq.</li>
+      <li class="reveal"><b>Smt. Padma &amp; Shivamurthy</b>children &amp; family · Kommaraghatta, Arasikere Tq.</li>
+      <li class="reveal"><b>Smt. Pushpavathi &amp; Mahalingappa</b>children &amp; family · Chikkamarappanahalli, Tiptur Tq.</li>
+      <li class="reveal"><b>Smt. Arpitha &amp; Kiran Kumar</b>Vijay &amp; Vaishnavi · Kommaraghatta, Arasikere Tq.</li>
+      <li class="reveal"><b>Smt. Kusuma &amp; Vasanth Kumar</b>Lochan &amp; Punarvi · Chikkamarappanahalli, Tiptur Tq.</li>
+      <li class="reveal"><b>The Ooramundala Mane family</b>with relatives &amp; friends</li>
+    </ul>
+    <ul class="fam kn">
+      <li class="kn reveal"><b>ಶ್ರೀಮತಿ ಲಲಿತಮ್ಮ ಮತ್ತು ಪ್ರಭುಸ್ವಾಮಿ</b>ಮಕ್ಕಳು, ಅಳಿಯಂದಿರು ಮತ್ತು ಮೊಮ್ಮಕ್ಕಳು · ತಿಗಳನಹಳ್ಳಿ, ಸಿ.ಎನ್ ಹಳ್ಳಿ (ತಾ)</li>
+      <li class="kn reveal"><b>ಶ್ರೀಮತಿ ಶಂಭುಲಿಂಗಮ್ಮ ಮತ್ತು ಬಸವರಾಜಪ್ಪ</b>ಮಕ್ಕಳು, ಅಳಿಯಂದಿರು ಮತ್ತು ಮೊಮ್ಮಕ್ಕಳು · ಹೊಸಹಳ್ಳಿ, ತಿಪಟೂರು (ತಾ)</li>
+      <li class="kn reveal"><b>ಶ್ರೀಮತಿ ಪದ್ಮ ಮತ್ತು ಶಿವಮೂರ್ತಿ</b>ಮಕ್ಕಳು, ಕುಟುಂಬದವರು · ಕೊಮ್ಮಾರಘಟ್ಟ, ಅರಸೀಕೆರೆ (ತಾ)</li>
+      <li class="kn reveal"><b>ಶ್ರೀಮತಿ ಪುಷ್ಪವತಿ ಮತ್ತು ಮಹಾಲಿಂಗಪ್ಪ</b>ಮಕ್ಕಳು, ಕುಟುಂಬದವರು · ಚಿಕ್ಕಮಾರಪ್ಪನಹಳ್ಳಿ, ತಿಪಟೂರು (ತಾ)</li>
+      <li class="kn reveal"><b>ಶ್ರೀಮತಿ ಅರ್ಪಿತ ಮತ್ತು ಕಿರಣ್ ಕುಮಾರ್</b>ವಿಜಯ್ ಮತ್ತು ವೈಷ್ಣವಿ · ಕೊಮ್ಮಾರಘಟ್ಟ, ಅರಸೀಕೆರೆ (ತಾ)</li>
+      <li class="kn reveal"><b>ಶ್ರೀಮತಿ ಕುಸುಮ ಮತ್ತು ವಸಂತ್ ಕುಮಾರ್</b>ಲೋಚನ್ ಹಾಗೂ ಪುನರ್ವಿ · ಚಿಕ್ಕಮಾರಪ್ಪನಹಳ್ಳಿ, ತಿಪಟೂರು (ತಾ)</li>
+      <li class="kn reveal"><b>ಊರಮುಂದಲ ಮನೆ ವಂಶಸ್ಥರು</b>ಹಾಗೂ ಬಂಧು-ಮಿತ್ರರು</li>
+    </ul>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="foot">
+    <svg class="leafbg" aria-hidden="true" width="100%" height="100%"><rect width="100%" height="100%" fill="url(#leafs)"/></svg>
+    <p class="with en reveal">With love,</p><p class="with kn reveal">ಪ್ರೀತಿಯಿಂದ,</p>
+    <div class="fn reveal">Lohith &amp; Kumuda Priya</div>
+    <div class="fd reveal">20 · 11 · 2026 · Tiptur</div>
+    <button class="pill reveal" id="shareBtn" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
+      <span class="en">Share invitation</span><span class="kn">ಆಹ್ವಾನ ಹಂಚಿಕೊಳ್ಳಿ</span>
+    </button>
+  </footer>
+</div>
+
+<script>
+(function(){
+  const $=s=>document.querySelector(s);
+  const html=document.documentElement;
+
+  /* ---------- language ---------- */
+  function setLang(l){ html.dataset.lang=l; html.lang=l==='kn'?'kn':'en'; try{localStorage.setItem('lk-lang',l)}catch(e){} }
+  try{ const saved=localStorage.getItem('lk-lang'); if(saved) setLang(saved); }catch(e){}
+  const qp=location.search.match(/[?&]lang=(en|kn)\b/); if(qp) setLang(qp[1]);
+  $('#langBtn').addEventListener('click',()=>setLang(html.dataset.lang==='kn'?'en':'kn'));
+
+  /* ---------- seal scallops ---------- */
+  const sc=$('#scallop'); let s='';
+  for(let i=0;i<28;i++){const a=i/28*Math.PI*2; s+=`<circle cx="${100+Math.cos(a)*78}" cy="${100+Math.sin(a)*78}" r="12"/>`;}
+  sc.innerHTML=s;
+
+  /* ---------- garden: balusters + rose bushes ---------- */
+  const bal=$('#balusters'); let b='';
+  for(let x=62;x<340;x+=15){ if(x>150&&x<240) continue; b+=`<use href="#baluster" x="${x}" y="125"/>`; }
+  bal.innerHTML=b;
+  const bushes=$('#bushes'); let g='';
+  function bush(cx,cy,w,h,n){
+    for(let i=0;i<n*2.2;i++){const x=cx+(Math.random()-.5)*w, y=cy+(Math.random()-.5)*h; g+=`<ellipse cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" rx="${(5+Math.random()*4).toFixed(1)}" ry="${(3+Math.random()*2).toFixed(1)}" fill="${Math.random()<.5?'#55704a':'#6f8a5c'}" transform="rotate(${(Math.random()*180).toFixed(0)} ${x.toFixed(1)} ${y.toFixed(1)})"/>`;}
+    const cols=[['#f1c9c0','#d99b91'],['#f8ece0','#e6cdb6'],['#eab4ad','#c9867e'],['#fbe3d6','#e8bca8']];
+    for(let i=0;i<n;i++){const x=cx+(Math.random()-.5)*w*.9, y=cy+(Math.random()-.5)*h*.8, r=3.5+Math.random()*3.2, c=cols[i%cols.length];
+      g+=`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r.toFixed(1)}" fill="${c[0]}" stroke="${c[1]}" stroke-width=".6"/><path d="M${(x-r*.45).toFixed(1)} ${y.toFixed(1)} a${(r*.45).toFixed(1)} ${(r*.45).toFixed(1)} 0 1 1 ${(r*.45).toFixed(1)} ${(r*.45).toFixed(1)}" fill="none" stroke="${c[1]}" stroke-width=".7"/>`;}
+  }
+  bush(92,168,70,34,12); bush(308,168,70,34,12); bush(18,180,60,40,10); bush(382,180,60,40,10); bush(150,186,46,22,7); bush(250,186,46,22,7);
+  bushes.innerHTML=g;
+
+  /* ---------- music ---------- */
+  const audio=$('#bgm'), mBtn=$('#musicBtn');
+  audio.addEventListener('loadedmetadata',()=>{ mBtn.hidden=false; });
+  audio.addEventListener('error',()=>{ mBtn.hidden=true; });
+  function play(){ audio.play().then(()=>mBtn.classList.add('playing')).catch(()=>{}); }
+  mBtn.addEventListener('click',()=>{ if(audio.paused) play(); else { audio.pause(); mBtn.classList.remove('playing'); } });
+
+  /* ---------- gate ---------- */
+  const gate=$('#gate'), hero=$('#hero');
+  function openGate(){
+    if(gate.classList.contains('open')) return;
+    gate.classList.add('open'); play();
+    setTimeout(()=>{ hero.classList.add('opened'); },700);
+    setTimeout(()=>{ gate.classList.add('gone'); document.body.classList.remove('locked'); revealCheck(); },2100);
+  }
+  $('#gateInner').addEventListener('click',openGate);
+  $('#gateInner').addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){e.preventDefault();openGate();} });
+  if(/[?&]open\b/.test(location.search)){ gate.classList.add('open','gone'); hero.classList.add('opened'); document.body.classList.remove('locked'); }
+
+  /* ---------- reveal on scroll ---------- */
+  let pending=[...document.querySelectorAll('.reveal')], rq=false;
+  function revealCheck(){
+    rq=false; const lim=window.innerHeight*0.94;
+    pending=pending.filter(el=>{ const r=el.getBoundingClientRect(); if(r.top<lim && (r.width||r.height)){ el.classList.add('in'); return false; } return true; });
+  }
+  const onScroll=()=>{ if(!rq){ rq=true; requestAnimationFrame(revealCheck); } };
+  window.addEventListener('scroll',onScroll,{passive:true}); window.addEventListener('resize',onScroll);
+  $('#langBtn').addEventListener('click',()=>setTimeout(revealCheck,30));
+  revealCheck();
+
+  /* ---------- countdown ---------- */
+  const target=new Date('2026-11-20T09:50:00+05:30').getTime(), pad=n=>String(n).padStart(2,'0');
+  function tick(){
+    let diff=Math.max(0,target-Date.now());
+    $('#d').textContent=pad(Math.floor(diff/864e5)); $('#h').textContent=pad(Math.floor(diff%864e5/36e5));
+    $('#m').textContent=pad(Math.floor(diff%36e5/6e4)); $('#s').textContent=pad(Math.floor(diff%6e4/1e3));
+  }
+  tick(); setInterval(tick,1000);
+
+  /* ---------- carousel ---------- */
+  const track=$('#track'), dots=[...document.querySelectorAll('#dots b')]; let idx=0, userTouched=false;
+  track.addEventListener('scroll',()=>{ const i=Math.round(track.scrollLeft/track.clientWidth); if(i!==idx){ idx=i; dots.forEach((d,j)=>d.classList.toggle('on',j===i)); } },{passive:true});
+  track.addEventListener('pointerdown',()=>userTouched=true);
+  setInterval(()=>{ if(userTouched||document.hidden) return; const n=(idx+1)%dots.length; track.scrollTo({left:n*track.clientWidth,behavior:'smooth'}); },3800);
+
+  /* ---------- scratch heart ---------- */
+  const wrap=$('#scratch'), cv=$('#scratchCanvas'), ctx=cv.getContext('2d');
+  const heart=new Path2D('M125 214 C 44 156, 6 112, 14 66 C 22 22, 84 6, 125 54 C 166 6, 228 22, 236 66 C 244 112, 206 156, 125 214 Z');
+  let ready=false, done=false, down=false, lx=0, ly=0, sx=1;
+  function paint(){
+    const w=wrap.clientWidth, h=wrap.clientHeight; if(!w) return;
+    const dpr=Math.min(window.devicePixelRatio||1,2); cv.width=w*dpr; cv.height=h*dpr; sx=w/250;
+    ctx.setTransform(dpr*sx,0,0,dpr*sx,0,0); ctx.globalCompositeOperation='source-over';
+    const gr=ctx.createRadialGradient(100,80,10,125,120,150); gr.addColorStop(0,'#b3c09f'); gr.addColorStop(.55,'#7f8f6b'); gr.addColorStop(1,'#56654a');
+    ctx.save(); ctx.clip(heart); ctx.fillStyle=gr; ctx.fillRect(0,0,250,230);
+    for(let i=0;i<900;i++){ ctx.fillStyle=`rgba(255,255,240,${(Math.random()*.55).toFixed(2)})`; ctx.fillRect(Math.random()*250,Math.random()*230,Math.random()*1.6+.3,Math.random()*1.6+.3); }
+    ctx.restore();
+    ctx.strokeStyle='rgba(255,250,235,.55)'; ctx.lineWidth=1.2; ctx.stroke(heart);
+    full=Math.max(1,opaque()); ctx.globalCompositeOperation='destination-out'; ready=true;
+  }
+  function pt(e){ const r=cv.getBoundingClientRect(), t=e.touches?e.touches[0]:e; return {x:(t.clientX-r.left)/sx, y:(t.clientY-r.top)/sx}; }
+  function line(x,y){ ctx.lineWidth=30; ctx.lineCap='round'; ctx.beginPath(); ctx.moveTo(lx,ly); ctx.lineTo(x,y); ctx.stroke(); lx=x; ly=y; }
+  function opaque(){ const d=ctx.getImageData(0,0,cv.width,cv.height).data; let n=0; for(let i=3;i<d.length;i+=4*24) if(d[i]>0) n++; return n; }
+  let full=1;
+  function cleared(){ return 1-opaque()/full; }
+  function finish(){
+    done=true; cv.classList.add('gone'); $('#saveWrap').classList.add('show');
+    const cf=$('#confetti'); let h='';
+    for(let i=0;i<22;i++){ const a=Math.random()*Math.PI*2, r=90+Math.random()*80;
+      h+=`<i style="--x:${(Math.cos(a)*r).toFixed(0)}px;--y:${(Math.sin(a)*r).toFixed(0)}px;--r:${(Math.random()*120-60).toFixed(0)}deg;animation-delay:${(Math.random()*.25).toFixed(2)}s;color:${['#5f6e4f','#c2a46b','#d99b91'][i%3]}">♥</i>`; }
+    cf.innerHTML=h;
+  }
+  function start(e){ if(done) return; if(!ready) paint(); down=true; const p=pt(e); lx=p.x; ly=p.y; line(p.x+.1,p.y); e.preventDefault(); }
+  function move(e){ if(!down) return; const p=pt(e); line(p.x,p.y); e.preventDefault(); }
+  function end(){ if(!down) return; down=false; if(!done && cleared()>.62) finish(); }
+  cv.addEventListener('mousedown',start); window.addEventListener('mousemove',move); window.addEventListener('mouseup',end);
+  cv.addEventListener('touchstart',start,{passive:false}); cv.addEventListener('touchmove',move,{passive:false}); cv.addEventListener('touchend',end);
+  paint(); window.addEventListener('resize',()=>{ if(!done) paint(); });
+
+  /* ---------- share ---------- */
+  $('#shareBtn').addEventListener('click',async()=>{
+    const text='You are warmly invited to the wedding of Lohith & Kumuda Priya · Muhurtham Fri, 20 Nov 2026, 9:50–10:20 AM · Sri Matha Convention Hall, Tiptur';
+    if(navigator.share){ try{ await navigator.share({title:'Lohith & Kumuda Priya — Wedding Invitation',text,url:location.href}); }catch(e){} return; }
+    window.open('https://wa.me/?text='+encodeURIComponent(text+'\n'+location.href),'_blank','noopener');
+  });
+})();
+</script>
+</body>
+</html>
