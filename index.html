@@ -50,17 +50,17 @@
   .door .vignette{position:absolute;inset:0;background:radial-gradient(120% 70% at 50% 50%,transparent 40%,rgba(40,50,30,.35));}
   .gate.open .door.l{transform:rotateY(-100deg);opacity:0}
   .gate.open .door.r{transform:rotateY(100deg);opacity:0}
-  .seal{position:absolute;left:50%;top:50%;width:170px;height:170px;transform:translate(-50%,-50%);z-index:3;transition:transform .7s ease,opacity .6s ease;
+  .seal{position:absolute;left:50%;top:50%;width:min(66vw,270px);height:min(66vw,270px);transform:translate(-50%,-50%);z-index:3;transition:transform .7s ease,opacity .6s ease;
     filter:drop-shadow(0 10px 18px rgba(30,40,20,.45));}
   .seal svg{width:100%;height:100%;}
   .seal .mono{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#7a6236;text-align:center;}
-  .seal .mono b{font-family:'Playfair Display',serif;font-style:italic;font-weight:500;font-size:32px;line-height:1;}
-  .seal .mono small{font-size:10px;letter-spacing:.3em;text-transform:uppercase;margin-top:8px;font-weight:600;}
-  .seal .mono small.kn{letter-spacing:.05em;font-size:11px;}
+  .seal .mono b{font-family:'Playfair Display',serif;font-style:italic;font-weight:500;font-size:clamp(40px,13vw,54px);line-height:1;}
+  .seal .mono small{font-size:clamp(11.5px,3.4vw,14px);letter-spacing:.28em;text-transform:uppercase;margin-top:10px;font-weight:600;}
+  .seal .mono small.kn{letter-spacing:.03em;font-size:clamp(12px,3.6vw,15px);}
   .seal{animation:pulse 2.4s ease-in-out infinite;}
   @keyframes pulse{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.05)}}
   .gate.open .seal{animation:none;transform:translate(-50%,-50%) scale(1.6);opacity:0}
-  .gate-hint{position:absolute;left:0;right:0;bottom:calc(36px + env(safe-area-inset-bottom));text-align:center;color:#f3ebdd;font-size:15px;font-style:italic;letter-spacing:.04em;z-index:3;transition:opacity .4s;text-shadow:0 1px 4px rgba(0,0,0,.3)}
+  .gate-hint{position:absolute;left:50%;transform:translateX(-50%);white-space:nowrap;bottom:calc(36px + env(safe-area-inset-bottom));text-align:center;color:#fbf5e8;font-size:16px;padding:7px 20px;border-radius:30px;background:rgba(62,73,53,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);font-style:italic;letter-spacing:.04em;z-index:3;transition:opacity .4s;text-shadow:0 1px 4px rgba(0,0,0,.3)}
   .gate.open .gate-hint{opacity:0}
   .gate.gone{display:none}
 
@@ -379,7 +379,8 @@
     <p class="small-note kn reveal">ಶ್ರೀ ಪರಾಭವ ನಾಮ ಸಂವತ್ಸರದ ಕಾರ್ತಿಕ ಮಾಸ ಶುಕ್ಲ ಪಕ್ಷ, ದಶಮಿ ಉಪರಿ ಏಕಾದಶಿ, ಉತ್ತರಾಭಾದ್ರ ನಕ್ಷತ್ರ</p>
 
     <div style="margin-top:46px" class="reveal">
-      <h2 class="sec-title en">Scratch to Reveal</h2><h2 class="sec-title kn">ಉಜ್ಜಿ ನೋಡಿ</h2>
+      <h2 class="sec-title en">Scratch to Reveal</h2><h2 class="sec-title kn">ಶುಭ ಮುಹೂರ್ತ</h2>
+      <p class="small-note kn" style="margin-top:6px">ತಿಳಿಯಲು ಹೃದಯವನ್ನು ಬೆರಳಿನಿಂದ ಸವರಿ</p>
       <div class="heart-rule"><span style="font-size:9px">♥</span></div>
     </div>
     <div class="scratch reveal" id="scratch">
@@ -412,10 +413,9 @@
     <div class="carousel reveal">
       <div class="track" id="track">
         <div class="slide"><img src="img/couple.jpg" alt="Lohith and Kumuda Priya"></div>
-        <div class="slide"><img src="img/mandap.jpg" alt="The couple at the mandap" loading="lazy" style="object-position:50% 60%"></div>
-        <div class="slide pair"><img src="img/groom.jpg" alt="Groom" loading="lazy"><img src="img/bride.jpg" alt="Bride" loading="lazy"></div>
+        <!-- To add more photos: copy the line above, change the file name (e.g. img/couple2.jpg) -->
       </div>
-      <div class="dots" id="dots"><b class="on"></b><b></b><b></b></div>
+      <div class="dots" id="dots"></div>
     </div>
     <div style="margin-top:44px" class="reveal">
       <h2 class="sec-title en">Counting Down to Forever</h2><h2 class="sec-title kn">ಶುಭ ಮುಹೂರ್ತಕ್ಕೆ ಇನ್ನು</h2>
@@ -552,7 +552,9 @@
   tick(); setInterval(tick,1000);
 
   /* ---------- carousel ---------- */
-  const track=$('#track'), dots=[...document.querySelectorAll('#dots b')]; let idx=0, userTouched=false;
+  const track=$('#track'), slides=track.querySelectorAll('.slide'), dotBox=$('#dots');
+  dotBox.innerHTML=slides.length>1?[...slides].map((_,i)=>`<b${i?'':' class="on"'}></b>`).join(''):'';
+  const dots=[...dotBox.querySelectorAll('b')]; let idx=0, userTouched=dots.length<2;
   track.addEventListener('scroll',()=>{ const i=Math.round(track.scrollLeft/track.clientWidth); if(i!==idx){ idx=i; dots.forEach((d,j)=>d.classList.toggle('on',j===i)); } },{passive:true});
   track.addEventListener('pointerdown',()=>userTouched=true);
   setInterval(()=>{ if(userTouched||document.hidden) return; const n=(idx+1)%dots.length; track.scrollTo({left:n*track.clientWidth,behavior:'smooth'}); },3800);
