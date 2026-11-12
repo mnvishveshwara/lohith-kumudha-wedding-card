@@ -600,7 +600,7 @@
 
   /* ---------- share ---------- */
   $('#shareBtn').addEventListener('click',async()=>{
-    const text='You are warmly invited to the wedding of Lohith & Kumuda Priya · Muhurtham Fri, 20 Nov 2026, 9:50–10:20 AM · Sri Matha Convention Hall, Tiptur';
+    const text='You are warmly invited to the wedding of Lohith & Kumuda Priya · Muhurtham Fri, 20 Nov 2026, 9:50–10:20 AM · Sri Matha Convention Hall, KB Cross';
     if(navigator.share){ try{ await navigator.share({title:'Lohith & Kumuda Priya — Wedding Invitation',text,url:location.href}); }catch(e){} return; }
     window.open('https://wa.me/?text='+encodeURIComponent(text+'\n'+location.href),'_blank','noopener');
   });
